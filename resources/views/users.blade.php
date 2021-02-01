@@ -7,6 +7,7 @@
         <thead>
             <tr>
                 <th>id</th>
+                <th>Foto</th>
                 <th>Nombre</th>
                 <th>Email</th>
                 <th>Actions</th>
@@ -17,6 +18,7 @@
         @foreach($employees as $employee)
             <tr>
                 <td>{{$employee->id}}</td>
+                <td><img src="{{ asset('storage').'/'.$employee->image}}" alt=""width='200'></td>
                 <td>{{$employee->name}}</td>
                 <td>{{$employee->email}}</td>
                 <td> <a href="{{route('users.show',$employee->id)}}">Editar</a> 

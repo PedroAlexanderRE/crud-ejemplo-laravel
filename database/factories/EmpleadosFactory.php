@@ -25,6 +25,7 @@ class EmpleadosFactory extends Factory
             'name' => $this->faker->name,
             'email' =>$this->faker->unique()->safeEmail,
             'about' =>$this->faker->text,
+            'image' =>'images/'.$this->faker->image('public/storage/images/',640,480,null,false),
         ];
     }
 }

@@ -12,6 +12,7 @@ class Empleados extends Model
         'name',
         'email',
         'about',
+        'image',
     ];
     
 }

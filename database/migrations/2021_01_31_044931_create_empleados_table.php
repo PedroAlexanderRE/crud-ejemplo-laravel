@@ -18,6 +18,7 @@ class CreateEmpleadosTable extends Migration
             $table->String('name');
             $table->string('email');
             $table->text('about');
+            $table->string('image');
             $table->timestamps();
         });
     }
