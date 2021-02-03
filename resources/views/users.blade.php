@@ -1,16 +1,18 @@
 @extends('layout')
 
 @section('content')
-    <h1>Users</h1>
-    <a href="{{route('addemployee')}}">Add Empleado</a>
-    <table >
+<br>
+    <a class="btn btn-primary" href="{{route('addemployee')}}">Add Employee</a>
+    <br><br>
+    <table class="table" >
         <thead>
             <tr>
                 <th>id</th>
                 <th>Foto</th>
                 <th>Nombre</th>
                 <th>Email</th>
-                <th>Actions</th>
+                <th></th>
+                <th></th>
             </tr>
                 
         </thead>
@@ -18,14 +20,16 @@
         @foreach($employees as $employee)
             <tr>
                 <td>{{$employee->id}}</td>
-                <td><img src="{{ asset('storage').'/'.$employee->image}}" alt=""width='200'></td>
+                <td><img class="img-thumbnail" src="{{ asset('storage').'/'.$employee->image}}" alt=""width='100'></td>
                 <td>{{$employee->name}}</td>
                 <td>{{$employee->email}}</td>
-                <td> <a href="{{route('users.show',$employee->id)}}">Editar</a> 
+                <td><a class="btn btn-success" href="{{route('users.show',$employee->id)}}">Editar</a>
+                </td>
+                <td>  
                         <form method="post" action="{{url('users/'.$employee->id)}}">
                             {{csrf_field()}}
                             {{method_field('DELETE')}}
-                            <button type="submit" onclick="return confirm('Borrar?')">Borrar</button>
+                            <button type="submit" class="btn btn-danger" onclick="return confirm('Borrar?')">Borrar</button>
                         </form>
                 </td>
             </tr>
